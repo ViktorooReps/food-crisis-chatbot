@@ -19,7 +19,7 @@ st.title('Rasa Chatbot')
 if 'conversation' in st.session_state:
     conversation = []
     for i, (message_user, message_bot) in enumerate(st.session_state.conversation):
-        st.markdown(message_user)
+        st.markdown('**' + message_user + '**')
         with st.container(border=True):
             st.markdown(message_bot)
 
