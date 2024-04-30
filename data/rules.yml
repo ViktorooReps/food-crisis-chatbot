@@ -1,6 +1,15 @@
 version: "3.1"
 
 rules:
-  - rule: Repeat intent name
+  - rule: Analyse rule
     steps:
-    - action: action_repeat_intent
+      - intent: analyse
+      - action: action_repeat_intent
+  - rule: Predict rule
+    steps:
+      - intent: predict
+      - action: action_repeat_intent
+  - rule: Fallback rule
+    steps:
+      - intent: nlu_fallback
+      - action: action_fallback

@@ -4,5 +4,22 @@ entities:
   - commodity
   - date
 
+intents:
+  - analyse:
+      use_entities:
+        - country
+        - commodity
+        - date
+  - predict:
+      use_entities:
+        - country
+        - commodity
+        - date
+
 actions:
-- action_repeat_intent
+  - action_repeat_intent
+  - action_fallback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
