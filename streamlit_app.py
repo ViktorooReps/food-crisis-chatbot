@@ -9,11 +9,20 @@ def update_conversation(user_message, bot_message):
         st.session_state.conversation = []
 
     # Append user and bot responses to the conversation history
-    st.session_state.conversation.append(("You: " + user_message, "Bot: " + bot_message))
+    st.session_state.conversation.append((user_message, bot_message))
 
 
 # Title of your web application
 st.title('Rasa Chatbot')
+
+# Display message history
+if 'conversation' in st.session_state:
+    conversation = []
+    for i, (message_user, message_bot) in enumerate(st.session_state.conversation):
+        st.markdown(message_user)
+        with st.container(border=True):
+            st.markdown(message_bot)
+
 
 # Text input for user message
 user_input = st.text_input("Type your message:")
@@ -35,19 +44,16 @@ if st.button("Send"):
         if response.status_code == 200:
             bot_response = response.json()[0]['text']  # Adjust based on response structure
             update_conversation(user_input, bot_response)
+            st.rerun()
         else:
             error_message = "Failed to get response from the bot."
             update_conversation(user_input, error_message)
+            st.rerun()
     else:
         st.warning('Please enter some text to send.')
-
-# Display message history
-if 'conversation' in st.session_state:
-    for message_user, message_bot in reversed(st.session_state.conversation):
-        st.text(message_user)
-        st.text(message_bot)
 
 # Clear conversation history
 if st.button("Clear Conversation"):
     if 'conversation' in st.session_state:
         st.session_state.conversation = []
+        st.rerun()
