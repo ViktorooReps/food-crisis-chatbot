@@ -1,0 +1,20 @@
+version: "3.1"
+nlu:
+  - intent: analyse
+    examples: |
+      - what are the latest food prices for [pakistan](country)
+      - what is the price change for [potatoes](commodity) in [libya](country) for the [latest year](date)
+      - how does the food price change in [egypt](country) from [august 2020](date) to [september 2022](date)
+    use_entities:
+      - country
+      - date
+      - commodity
+  - intent: predict
+    examples: |
+      - what will be the food prices for [pakistan](country)
+      - what will be the price for [potatoes](commodity) in [libya](country) the [next year](date)
+      - how will the food price change in [egypt](country) from [august 2020](date) to [september 2024](date)
+    use_entities:
+      - country
+      - date
+      - commodity
