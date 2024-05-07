@@ -17,6 +17,12 @@ Run Rasa training (it will take a few minutes):
 rasa train
 ```
 
+Load model endpoint:
+
+```bash
+rasa run
+```
+
 Set up actions server:
 
 ```bash
