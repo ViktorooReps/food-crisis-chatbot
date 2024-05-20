@@ -1,3 +1,9 @@
 rasa
 rasa-sdk
 streamlit
+dateparser
+pandas
+seaborn
+matplotlib
+requests
+packaging==21.3

@@ -2,23 +2,69 @@ version: '3.1'
 entities:
   - country
   - commodity
+  - start_date
+  - end_date
   - date
 
 intents:
-  - analyse:
-      use_entities:
-        - country
-        - commodity
-        - date
-  - predict:
-      use_entities:
-        - country
-        - commodity
-        - date
+  - analyse
+
+slots:
+  country:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: country
+  commodity:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: commodity
+  start_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: start_date
+  end_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: end_date
+  start_price:
+    type: float
+    mappings:
+      - type: custom
+  end_price:
+    type: float
+    mappings:
+      - type: custom
+  trend:
+    type: text
+    mappings:
+      - type: custom
+  image_path:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+forms:
+  analyze_prices_form:
+    required_slots:
+      - country
+      - commodity
+      - start_date
+      - end_date
 
 actions:
+  - action_analyze_prices
   - action_repeat_intent
   - action_fallback
+
+responses:
+  utter_price:
+    - text: "The price of {commodity} in {country} from {start_date} to {end_date} has changed from {start_price} to {end_price}."
+      image: "{image_path}"
 
 session_config:
   session_expiration_time: 60
