@@ -6,4 +6,5 @@ pandas
 seaborn
 matplotlib
 requests
+hdx-python-api
 packaging==21.3

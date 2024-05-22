@@ -4,17 +4,9 @@ rules:
   - rule: Analyze prices
     steps:
       - intent: analyse
-      - action: analyze_prices_form
-      - active_loop: analyze_prices_form
-
-  - rule: Submit analyze prices form
-    condition:
-      - active_loop: analyze_prices_form
-    steps:
-      - action: analyze_prices_form
-      - active_loop: null
+      - action: action_map_entities_to_slots
       - action: action_analyze_prices
-      - action: utter_price
+      - action: utter_analyze
 
   - rule: Fallback rule
     steps:

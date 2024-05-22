@@ -10,61 +10,40 @@ intents:
   - analyse
 
 slots:
-  country:
-    type: text
+  countries:
+    type: list
     mappings:
       - type: from_entity
         entity: country
-  commodity:
-    type: text
+  commodities:
+    type: list
     mappings:
       - type: from_entity
         entity: commodity
   start_date:
     type: text
     mappings:
-      - type: from_entity
-        entity: start_date
+      - type: custom
   end_date:
     type: text
     mappings:
-      - type: from_entity
-        entity: end_date
-  start_price:
-    type: float
-    mappings:
       - type: custom
-  end_price:
-    type: float
-    mappings:
-      - type: custom
-  trend:
-    type: text
-    mappings:
-      - type: custom
-  image_path:
-    type: text
+  image_paths:
+    type: list
     influence_conversation: false
     mappings:
       - type: custom
-
-forms:
-  analyze_prices_form:
-    required_slots:
-      - country
-      - commodity
-      - start_date
-      - end_date
 
 actions:
   - action_analyze_prices
   - action_repeat_intent
   - action_fallback
+  - action_map_entities_to_slots
 
 responses:
-  utter_price:
-    - text: "The price of {commodity} in {country} from {start_date} to {end_date} has changed from {start_price} to {end_price}."
-      image: "{image_path}"
+  utter_analyze:
+    - text: "Here is the price trend."
+      image: "{image_paths}"
 
 session_config:
   session_expiration_time: 60
