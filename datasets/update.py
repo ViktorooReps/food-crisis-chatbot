@@ -1,10 +1,14 @@
 import logging
+import os
+from pathlib import Path
 
 from hdx.api.configuration import Configuration
 from hdx.data.dataset import Dataset
 import pandas as pd
 
 logger = logging.getLogger(__name__)
+
+DATA_PATH = Path('datasets/data')
 
 DATASET_SOURCES = [
     'wfp-food-prices-for-afghanistan',
@@ -205,10 +209,13 @@ def load_dataset(dataset_id: str):
     for alias in unit_alias:
         df.loc[df.unit == alias.capitalize(), 'unit'] = 'Unit'
 
-    df.to_csv(f'datasets/{dataset_id.replace("wfp-food-prices-for-", "")}.csv', index=False)
+    df.to_csv(DATA_PATH.joinpath(f'{dataset_id.replace("wfp-food-prices-for-", "")}.csv'), index=False)
 
 
 def update_datasets():
+    if not DATA_PATH.exists():
+        os.makedirs(DATA_PATH)
+
     for dataset_id in DATASET_SOURCES:
         logger.info(f'Loading {dataset_id} dataset from HDX')
         load_dataset(dataset_id)

@@ -2,12 +2,15 @@ version: '3.1'
 entities:
   - country
   - commodity
-  - start_date
-  - end_date
   - date
 
 intents:
-  - analyse
+  - analyze
+  - out_of_scope
+  - greet
+  - ask_help
+  - change_mind
+  - get_information
 
 slots:
   countries:
@@ -24,26 +27,97 @@ slots:
     type: text
     mappings:
       - type: custom
+        entity: date
   end_date:
     type: text
     mappings:
       - type: custom
+        entity: date
   image_paths:
     type: list
     influence_conversation: false
     mappings:
       - type: custom
 
+forms:
+  analyze_form:
+    ignored_intents:
+      - out_of_scope
+      - ask_help
+      - change_mind
+      - greet
+    required_slots:
+      - commodities
+      - countries
+      - start_date
+      - end_date
+
 actions:
   - action_analyze_prices
-  - action_repeat_intent
   - action_fallback
   - action_map_entities_to_slots
+  - action_greet_and_help
+  - validate_analyze_form
+  - action_deactivate_loop
+  - action_show_table
 
 responses:
-  utter_analyze:
-    - text: "Here is the price trend."
-      image: "{image_paths}"
+  utter_fallback:
+    - text: "I'm sorry, I didn't quite understand that. Can you rephrase?"
+    - text: "I apologize, but I didn't catch that. Could you please rephrase?"
+    - text: "Sorry, I didn't get that. Can you say it differently?"
+    - text: "I didn't understand that. Could you try saying it another way?"
+
+  utter_help_message:
+    - text: |
+        I can help you compare commodity prices across multiple countries using data from the Humanitarian Data Exchange (HDX).
+        You can ask me questions like:
+        - 'Compare the price of rice in Japan and India in 2020'
+        - 'Show me the latest wheat prices in China and Brazil'  
+        
+        Just mention the commodity and the countries you're interested in.
+
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+    - text: "Hi there! How can I help you today?"
+    - text: "Greetings! What can I assist you with today?"
+    - text: "Hello! What do you need help with today?"
+
+  utter_greet_again:
+    - text: "Hello again! How can I assist you further?"
+    - text: "Welcome back! How can I help you further?"
+    - text: "Hello again! What else do you need assistance with?"
+    - text: "Hi again! What would you like to do next?"
+
+  utter_ask_commodities:
+    - text: "Which commodities are you interested in?"
+    - text: "Can you tell me which commodities you're interested in?"
+    - text: "What commodities would you like to focus on?"
+    - text: "Which specific commodities are you looking into?"
+
+  utter_ask_countries:
+    - text: "Which countries do you want to analyze?"
+    - text: "Please specify the countries you'd like to analyze."
+    - text: "Which countries are you interested in for the analysis?"
+    - text: "Can you mention the countries you want to analyze?"
+
+  utter_ask_start_date:
+    - text: "Please provide the date period for the analysis."
+    - text: "Can you give me the date period for the analysis?"
+    - text: "What is the start date for your analysis period?"
+    - text: "Could you specify the start date for the analysis?"
+
+  utter_ask_end_date:
+    - text: "Please provide the date period for the analysis."
+    - text: "Can you give me the end date for the analysis period?"
+    - text: "What is the end date for your analysis period?"
+    - text: "Could you specify the end date for the analysis?"
+
+  utter_cancel_analyze:
+    - text: "Alright, let's do something else. What would you like to analyze instead?"
+    - text: "Okay, let's switch gears. What else would you like to analyze?"
+    - text: "No problem, let's look at something else. What would you prefer to analyze?"
+    - text: "Sure, let's change the focus. What other analysis would you like to do?"
 
 session_config:
   session_expiration_time: 60

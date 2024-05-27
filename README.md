@@ -6,28 +6,39 @@
 
 ## Setup
 
-Install required Python packages: 
-```bash
-pip install -r requirements.txt
-```
+1. Install required Python packages and SpaCy model:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Run Rasa training (it will take a few minutes):
+2. Download SpaCy model for English language:
+    ```bash
+    python -m spacy download en_core_web_md
+    ```
 
-```bash
-rasa train
-```
+3. Download fasttext language detection model (126MB):
+    ```bash
+    curl -o .\lid.176.bin https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin
+    ```
 
-Load model endpoint:
+4. Load HDX datasets and set up actions server:
+    ```bash
+    UPDATE_HDX_DATASETS=True rasa run actions
+    ```
+5. Update lookup tables for country names and commodities:
+   ```bash
+   python datasets/collect_lookup_tables.py
+   ```
 
-```bash
-rasa run
-```
+6. Run Rasa training (it will take a few minutes):
+    ```bash
+    rasa train
+    ```
 
-Set up actions server:
-
-```bash
-rasa run actions
-```
+7. Load model endpoint:
+    ```bash
+    rasa run
+    ```
 
 Interact with chatbot either with shell:
 
@@ -36,6 +47,7 @@ rasa shell
 ```
 
 Or with streamlit application:
+
 ```bash 
 streamlit run streamlit_app.py
 ```

@@ -1,14 +1,47 @@
+# noinspection YAMLSchemaValidation
 version: "3.1"
 
+# noinspection YAMLSchemaValidation
 rules:
   - rule: Analyze prices
     steps:
-      - intent: analyse
+      - intent: analyze
       - action: action_map_entities_to_slots
+      - action: analyze_form
+      - active_loop: analyze_form
+
+  - rule: Submit analyze form
+    condition:
+        - active_loop: analyze_form
+    steps:
+      - action: analyze_form
+      - active_loop: null
       - action: action_analyze_prices
-      - action: utter_analyze
+
+  - rule: Break out of analyze form
+    condition:
+      - active_loop: analyze_form
+    steps:
+      - intent: change_mind
+      - action: action_deactivate_loop
+      - action: utter_cancel_analyze
+
+  - rule: Get information
+    steps:
+      - intent: get_information
+      - action: action_show_table
 
   - rule: Fallback rule
     steps:
       - intent: nlu_fallback
       - action: action_fallback
+
+  - rule: Respond to help requests
+    steps:
+      - intent: ask_help
+      - action: utter_help_message
+
+  - rule: Greet and help
+    steps:
+      - intent: greet
+      - action: action_greet_and_help

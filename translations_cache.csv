@@ -1,0 +1,72 @@
+text,language,translation
+Select Language,en,Select Language
+Type your message:,en,Type your message:
+Send,en,Send
+Clear Conversation,en,Clear Conversation
+Hello! How can I assist you today?,en,Hello! How can I assist you today?
+"I can help you compare commodity prices across multiple countries using data from the Humanitarian Data Exchange (HDX).
+You can ask me questions like:
+- 'Compare the price of rice in Japan and India in 2020'
+- 'Show me the latest wheat prices in China and Brazil'  ",en,"I can help you compare commodity prices across multiple countries using data from the Humanitarian Data Exchange (HDX).
+You can ask me questions like:
+- 'Compare the price of rice in Japan and India in 2020'
+- 'Show me the latest wheat prices in China and Brazil'"
+Just mention the commodity and the countries you're interested in.,en,Just mention the commodity and the countries you're interested in.
+Hello! How can I assist you today?,fr,Bonjour!Comment puis-je vous aider aujourd'hui?
+"I can help you compare commodity prices across multiple countries using data from the Humanitarian Data Exchange (HDX).
+You can ask me questions like:
+- 'Compare the price of rice in Japan and India in 2020'
+- 'Show me the latest wheat prices in China and Brazil'  ",fr,"Je peux vous aider à comparer les prix des matières premières dans plusieurs pays en utilisant des données de l'échange de données humanitaires (HDX).
+Vous pouvez me poser des questions comme:
+- «Comparez le prix du riz au Japon et en Inde en 2020»
+- «Montrez-moi les derniers prix du blé en Chine et au Brésil»"
+Just mention the commodity and the countries you're interested in.,fr,Il suffit de mentionner la marchandise et les pays qui vous intéressent.
+Type your message:,fr,Tapez votre message:
+Send,fr,Envoyer
+Clear Conversation,fr,Conversation claire
+Select Language,fr,Choisir la langue
+"Showing the price trend for Rice in Japan, India countries for 2020-01-01 - 2020-12-31 time period",fr,"Affichage de la tendance des prix du riz au Japon, pays indiens pour 2020-01-01 - 2020-12-31 Période"
+Type your message:,ru,Введите сообщение:
+Send,ru,Отправить
+Clear Conversation,ru,Очистить историю сообщений
+Select Language,ru,Выбрать язык
+"I'm sorry, I didn't quite understand that. Can you rephrase?",ru,"Извините, я этого не совсем понял. Вы можете перефразировать?"
+"Showing the price trend for Rice (low quality) in Kazakhstan, Afghanistan countries for 2020-01-01 - 2020-12-31 time period",ru,"Ниже показана ценовая тенденция риса (низкое качество) в Казахстане, страны Афганистана на 2020-01-01-2020-12-31 периода времени"
+Type your message:,de,Geben Sie Ihre Nachricht ein:
+Send,de,Schicken
+Clear Conversation,de,Klare Unterhaltung
+Select Language,de,Sprache auswählen
+Type your message:,ja,メッセージを入力してください：
+Send,ja,送信
+Clear Conversation,ja,明確な会話
+Select Language,ja,言語を選択する
+Type your message:,es,Escribe tu mensaje:
+Send,es,Enviar
+Clear Conversation,es,Conversación clara
+Select Language,es,Seleccione el idioma
+Hello! What do you need help with today?,en,Hello! What do you need help with today?
+"I can help you compare commodity prices across multiple countries using data from the Humanitarian Data Exchange (HDX).
+You can ask me questions like:
+- 'Compare the price of rice in Japan and India in 2020'
+- 'Show me the latest wheat prices in China and Brazil'  ",en,"I can help you compare commodity prices across multiple countries using data from the Humanitarian Data Exchange (HDX).
+You can ask me questions like:
+- 'Compare the price of rice in Japan and India in 2020'
+- 'Show me the latest wheat prices in China and Brazil'"
+"No problem, let's look at something else. What would you prefer to analyze?",en,"No problem, let's look at something else. What would you prefer to analyze?"
+"Alright, let's do something else. What would you like to analyze instead?",en,"Alright, let's do something else. What would you like to analyze instead?"
+Hello! What do you need help with today?,fr,Bonjour!Avec quoi avez-vous besoin d'aide aujourd'hui?
+"I can help you compare commodity prices across multiple countries using data from the Humanitarian Data Exchange (HDX).
+You can ask me questions like:
+- 'Compare the price of rice in Japan and India in 2020'
+- 'Show me the latest wheat prices in China and Brazil'  ",fr,"Je peux vous aider à comparer les prix des matières premières dans plusieurs pays en utilisant des données de l'échange de données humanitaires (HDX).
+Vous pouvez me poser des questions comme:
+- «Comparez le prix du riz au Japon et en Inde en 2020»
+- «Montrez-moi les derniers prix du blé en Chine et au Brésil»"
+What is the start date for your analysis period?,en,What is the start date for your analysis period?
+No data found for the period from 2023-05-28 to 2024-05-27,en,No data found for the period from 2023-05-28 to 2024-05-27
+"Showing the price trend for Milk, Milk (powder), Bread in Kazakhstan, Angola countries for 1994-06-04 - 2024-05-27 time period",en,"Showing the price trend for Milk, Milk (powder), Bread in Kazakhstan, Angola countries for 1994-06-04 - 2024-05-27 time period"
+Hi there! How can I help you today?,en,Hi there! How can I help you today?
+Please provide the date period for the analysis.,en,Please provide the date period for the analysis.
+"I'm sorry, I didn't quite understand that. Can you rephrase?",en,"I'm sorry, I didn't quite understand that. Can you rephrase?"
+Can you give me the date period for the analysis?,en,Can you give me the date period for the analysis?
+"Showing the price trend for Milk, Milk (powder), Bread in Angola, Kazakhstan countries for 1994-06-04 - 2024-05-27 time period",en,"Showing the price trend for Milk, Milk (powder), Bread in Angola, Kazakhstan countries for 1994-06-04 - 2024-05-27 time period"
