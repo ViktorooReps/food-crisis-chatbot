@@ -70,3 +70,47 @@ Please provide the date period for the analysis.,en,Please provide the date peri
 "I'm sorry, I didn't quite understand that. Can you rephrase?",en,"I'm sorry, I didn't quite understand that. Can you rephrase?"
 Can you give me the date period for the analysis?,en,Can you give me the date period for the analysis?
 "Showing the price trend for Milk, Milk (powder), Bread in Angola, Kazakhstan countries for 1994-06-04 - 2024-05-27 time period",en,"Showing the price trend for Milk, Milk (powder), Bread in Angola, Kazakhstan countries for 1994-06-04 - 2024-05-27 time period"
+Select Language,zh-cn,选择语言
+"I can help you compare commodity prices across multiple countries using data from the Humanitarian Data Exchange (HDX).
+You can ask me questions like:
+- 'Compare the price of rice in Japan and India in 2020'
+- 'Show me the latest wheat prices in China and Brazil'  ",zh-cn,"我可以使用人道主义数据交换（HDX）的数据来帮助您比较多个国家 /地区的商品价格。
+您可以问我这样的问题：
+ - “比较2020年日本和印度的大米价格”
+ - “向我展示中国和巴西的最新小麦价格”"
+Just mention the commodity and the countries you're interested in.,zh-cn,只需提及您感兴趣的商品和国家即可。
+Type your message:,zh-cn,输入您的消息：
+Send,zh-cn,发送
+Clear Conversation,zh-cn,清晰的对话
+Welcome back! How can I help you further?,en,Welcome back! How can I help you further?
+Hello again! How can I assist you further?,en,Hello again! How can I assist you further?
+Settings,en,Settings
+Settings,fr,Paramètres
+Hi there! How can I help you today?,fr,Salut!Comment puis-je vous aider aujourd'hui?
+Welcome back! How can I help you further?,fr,Content de te revoir!Comment puis-je vous aider davantage?
+Hello again! How can I assist you further?,fr,Bonjour à nouveau!Comment puis-je vous aider davantage?
+No data found for the period from 1994-06-04 to 2024-05-27,en,No data found for the period from 1994-06-04 to 2024-05-27
+Hi again! What would you like to do next?,en,Hi again! What would you like to do next?
+Hello again! What else do you need assistance with?,en,Hello again! What else do you need assistance with?
+Settings,es,Ajustes
+Settings,hi,समायोजन
+Select Language,hi,भाषा चुने
+Clear Conversation,hi,स्पष्ट बातचीत
+Type your message:,hi,अपना संदेश टाइप करें:
+Getting response from chatbot...,hi,चैटबॉट से प्रतिक्रिया प्राप्त करना ...
+Hello again! How can I assist you further?,hi,फिर से हैलो!मैं आपकी आगे कैसे सहायता कर सकता हूं?
+Getting response from chatbot...,en,Getting response from chatbot...
+Hello again! What else do you need assistance with?,hi,फिर से हैलो!आपको और क्या सहायता की आवश्यकता है?
+Showing the price trend for Bread in Angola countries for 2010-01-01 - 2010-12-31 time period,hi,2010-01-01-2010-12-31 समय अवधि के लिए अंगोला देशों में रोटी के लिए मूल्य प्रवृत्ति दिखा रहा है
+Showing the price trend for Bread in Angola countries for 2010-01-01 - 2010-12-31 time period,en,Showing the price trend for Bread in Angola countries for 2010-01-01 - 2010-12-31 time period
+"Okay, let's switch gears. What else would you like to analyze?",en,"Okay, let's switch gears. What else would you like to analyze?"
+"Showing the price trend for Wheat, Wheat flour in Argentina, belarus countries for 2005-01-01 - 2020-12-31 time period",en,"Showing the price trend for Wheat, Wheat flour in Argentina, belarus countries for 2005-01-01 - 2020-12-31 time period"
+"Showing the price trend for Wheat, Buckwheat in Bangladesh, armenia countries for 2005-01-01 - 2020-12-31 time period",en,"Showing the price trend for Wheat, Buckwheat in Bangladesh, armenia countries for 2005-01-01 - 2020-12-31 time period"
+"Showing the price trend for Wheat, Wheat flour, Buckwheat in Bangladesh, armenia countries for 2005-01-01 - 2020-12-31 time period",en,"Showing the price trend for Wheat, Wheat flour, Buckwheat in Bangladesh, armenia countries for 2005-01-01 - 2020-12-31 time period"
+"Showing the price trend for Wheat, Wheat flour in Bangladesh, Armenia countries for 2023-05-28 - 2024-05-27 time period",en,"Showing the price trend for Wheat, Wheat flour in Bangladesh, Armenia countries for 2023-05-28 - 2024-05-27 time period"
+"Sure, let's change the focus. What other analysis would you like to do?",en,"Sure, let's change the focus. What other analysis would you like to do?"
+"Showing the price trend for Cassava in Colombia, Gabon countries for 2007-01-01 - 2017-12-31 time period",en,"Showing the price trend for Cassava in Colombia, Gabon countries for 2007-01-01 - 2017-12-31 time period"
+"Showing the price trend for Cassava in Colombia, Gabon countries for 2007-01-01 - 2024-12-31 time period",en,"Showing the price trend for Cassava in Colombia, Gabon countries for 2007-01-01 - 2024-12-31 time period"
+"Showing the price trend for Cassava, Fish (dry) in Colombia, Gabon countries for 2007-01-01 - 2024-12-31 time period",en,"Showing the price trend for Cassava, Fish (dry) in Colombia, Gabon countries for 2007-01-01 - 2024-12-31 time period"
+"Showing the price trend for Cassava, Fish (dry) in Colombia, Gabon countries for 2007-01-01 - 2017-12-31 time period",en,"Showing the price trend for Cassava, Fish (dry) in Colombia, Gabon countries for 2007-01-01 - 2017-12-31 time period"
+"Showing the price trend for Wheat, Wheat flour in Colombia, Gabon countries for 2007-01-01 - 2017-12-31 time period",en,"Showing the price trend for Wheat, Wheat flour in Colombia, Gabon countries for 2007-01-01 - 2017-12-31 time period"

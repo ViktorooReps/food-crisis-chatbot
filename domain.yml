@@ -72,8 +72,9 @@ responses:
     - text: |
         I can help you compare commodity prices across multiple countries using data from the Humanitarian Data Exchange (HDX).
         You can ask me questions like:
-        - 'Compare the price of rice in Japan and India in 2020'
-        - 'Show me the latest wheat prices in China and Brazil'  
+        - 'Compare the price of milk and bread in Kazakhstan and Angola for the past two decades'
+        - 'Show me the latest wheat flour prices in Armenia'
+        - 'How can I compare prices in Colombia and Gabon'
         
         Just mention the commodity and the countries you're interested in.
 

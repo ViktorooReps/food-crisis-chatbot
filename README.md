@@ -25,7 +25,7 @@
     ```bash
     UPDATE_HDX_DATASETS=True rasa run actions
     ```
-5. Update lookup tables for country names and commodities:
+5. (optional) Update lookup tables for country names and commodities:
    ```bash
    python datasets/collect_lookup_tables.py
    ```

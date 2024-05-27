@@ -1,8 +1,12 @@
+from time import sleep
+from typing import Iterator
+
 import streamlit as st
 import requests
 from googletrans import Translator
 import pandas as pd
 import os
+
 
 # Initialize translator
 translator = Translator()
@@ -28,7 +32,7 @@ translations_cache = load_translations()
 
 
 # Function to translate text and cache the result
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def translate_text(text, dest_language):
     global translations_cache
 
@@ -39,14 +43,15 @@ def translate_text(text, dest_language):
     if not cached_translation.empty:
         return cached_translation['translation'].values[0]
 
-    # Translate and cache the result
-    translation = translator.translate(text, dest=dest_language).text
-    new_translation = pd.DataFrame([[text, dest_language, translation]], columns=['text', 'language', 'translation'])
+    with st.spinner():
+        # Translate and cache the result
+        translation = translator.translate(text, dest=dest_language).text
+        new_translation = pd.DataFrame([[text, dest_language, translation]], columns=['text', 'language', 'translation'])
 
-    translations_cache = pd.concat([translations_cache, new_translation], ignore_index=True)
-    save_translations(translations_cache)
+        translations_cache = pd.concat([translations_cache, new_translation], ignore_index=True)
+        save_translations(translations_cache)
 
-    return translation
+        return translation
 
 
 # Function to update conversation on the screen
@@ -70,53 +75,77 @@ languages = {
     'German': 'de',
     'Chinese': 'zh-cn',
     'Japanese': 'ja',
-    'Russian': 'ru'
+    'Russian': 'ru',
+    'Hindi': 'hi'
 }
 
 # Initialize selected language in session state if not already set
 if 'selected_language' not in st.session_state:
     st.session_state.selected_language = 'English'
 
-selected_language = st.selectbox(
-    translate_text("Select Language", languages[st.session_state.selected_language]),
-    list(languages.keys()),
-    index=list(languages.keys()).index(st.session_state.selected_language)
-)
+with st.expander(translate_text('Settings', languages[st.session_state.selected_language]), expanded=False):
+    # Language selection dropdown
+    choices = sorted(languages.keys())
+    selected_language = st.selectbox(
+        translate_text('Select Language', languages[st.session_state.selected_language]),
+        choices,
+        index=choices.index(st.session_state.selected_language)
+    )
 
-if selected_language != st.session_state.selected_language:
-    st.session_state.selected_language = selected_language
-    st.rerun()
+    # Update selected language in session state
+    if selected_language != st.session_state.selected_language:
+        st.session_state.selected_language = selected_language
+        st.rerun()
 
-# Display message history
-if 'conversation' in st.session_state:
-    conversation = []
-    for i, (message_user, message_bot, image_paths, table_data) in enumerate(st.session_state.conversation):
-        if message_user:
-            st.markdown('**' + message_user + '**')
+    # Clear conversation history button
+    if st.button(
+            translate_text('Clear Conversation', languages[st.session_state.selected_language]),
+            type='primary'
+    ):
+        if 'conversation' in st.session_state:
+            st.session_state.conversation = []
+            st.rerun()
 
-        with st.container(border=True):
-            if message_bot:
-                translated_message = translate_text(message_bot, languages[st.session_state.selected_language])
-                st.markdown(translated_message)
-            if image_paths:
-                for path in image_paths:
-                    st.image(path)
-            if table_data:
-                st.dataframe(pd.DataFrame(**table_data).astype(str), hide_index=True, use_container_width=True)
+chat_container = st.container()
 
-with st.form("my-form"):
-    # Text input for user message
-    user_input = st.text_input(translate_text("Type your message:", languages[st.session_state.selected_language]))
+with chat_container:
+    # Display message history
+    if 'conversation' in st.session_state:
+        conversation = []
+        for i, (message_user, message_bot, image_paths, table_data) in enumerate(st.session_state.conversation):
+            if message_user:
+                with st.chat_message('user'):
+                    st.markdown(message_user)
 
-    # Button to send the message
-    if st.form_submit_button(translate_text("Send", languages[st.session_state.selected_language])):
-        if user_input:
+            with st.chat_message('assistant'):
+                if message_bot:
+                    translated_message = translate_text(message_bot, languages[st.session_state.selected_language])
+                    st.markdown(translated_message)
+                if image_paths:
+                    for path in image_paths:
+                        st.image(path)
+                if table_data:
+                    st.dataframe(pd.DataFrame(**table_data).astype(str), hide_index=True, use_container_width=True)
+
+if prompt := st.chat_input(translate_text(
+        "Type your message:",
+        languages[st.session_state.selected_language])
+):
+    if len(prompt):
+        with chat_container:
+            with st.chat_message('user'):
+                st.markdown(prompt)
+
+        with st.spinner(translate_text(
+                'Getting response from chatbot...',
+                languages[st.session_state.selected_language]
+        )):
             # Rasa server URL where the Rasa server is running
             rasa_server_url = 'http://localhost:5005/webhooks/rest/webhook'
             # Define the payload
             payload = {
                 "sender": "user",
-                "message": user_input
+                "message": prompt
             }
             # POST request to send the message to the Rasa server
             response = requests.post(rasa_server_url, json=payload)
@@ -143,7 +172,7 @@ with st.form("my-form"):
                 first_response = bot_responses[0] if len(bot_responses) else None
 
                 # assign all images and table data to the first response
-                update_conversation(user_input.strip(), first_response, images, table_data)
+                update_conversation(prompt.strip(), first_response, images, table_data)
 
                 # all responses except the first one are without images
                 for bot_response in bot_responses[1:]:
@@ -155,16 +184,5 @@ with st.form("my-form"):
                     "Failed to get response from the bot.",
                     languages[st.session_state.selected_language]
                 )
-                update_conversation(user_input, error_message)
+                update_conversation(prompt, error_message)
                 st.rerun()
-        else:
-            st.warning(translate_text(
-                'Please enter some text to send.',
-                languages[st.session_state.selected_language])
-            )
-
-# Clear conversation history
-if st.button(translate_text("Clear Conversation", languages[st.session_state.selected_language])):
-    if 'conversation' in st.session_state:
-        st.session_state.conversation = []
-        st.rerun()

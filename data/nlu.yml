@@ -96,6 +96,11 @@ nlu:
     - What is the [current](date) price in the market?
     - Show the monthly price trends in [India](country).
     - Analyze the price changes in different countries.
+    - Analyze
+    - Run analysis
+    - Plot the data
+    - Plot prices now
+    - Plot
 - intent: get_information
   examples: |
     - How can I compare [Djibouti](country) and [Gabon](country)?
@@ -119,6 +124,47 @@ nlu:
     - Which items are included in the [Oman](country) data records?
     - How can price trends be compared in [Bolivia](country), [Liberia](country), and [Uganda](country) for [2010](date)?
     - How can I compare [Kazakhstan](country) and [Angola](country) on food prices?
+    - What countries do you have in the dataset?
+    - What commodities are there in your dataset?
+    - List all commodities you have data on in [2001](date)
+    - I am interested in the [1990](date)-[2000](date) period in [Belarus](country)
+    - What details are available on [sugar](commodity) between [2012](date) and [2018](date)?
+    - What items are listed in the [Egypt](country) records?
+    - How can I compare price trends in [Malaysia](country), [Thailand](country), and [Vietnam](country) for [2011](date)?
+    - How can I contrast [Australia](country) and [New Zealand](country) regarding food prices?
+    - Which nations are included in your dataset?
+    - What kinds of commodities are listed in your dataset?
+    - Provide all commodities you have data on for [2004](date)
+    - I'm looking for data from the [1985](date)-[1995](date) period in [Romania](country)
+    - What information do you have on [rice](commodity) from [2009](date) to [2021](date)?
+    - What products are in the [Canada](country) dataset?
+    - How can price trends be evaluated in [Turkey](country), [Iran](country), and [Iraq](country) for [2014](date)?
+    - How can I compare [Portugal](country) and [Morocco](country) in terms of food prices?
+    - What countries are included in your dataset?
+    - What are the various commodities in your dataset?
+    - Show all commodities available in [2006](date)
+    - I'm interested in the [1992](date)-[2002](date) timeframe in [Hungary](country)
+    - Can you provide information on [coffee](commodity) from [2013](date) to [2019](date)?
+    - Which items are recorded for [Nigeria](country)?
+    - What are the price trends in [Pakistan](country), [Bangladesh](country), and [Sri Lanka](country) for [2016](date)?
+    - How can I analyze [South Africa](country) and [Namibia](country) in terms of food costs?
+    - What nations are covered in the dataset?
+    - What types of goods are in your dataset?
+    - List all commodities you have data for in [2008](date)
+    - I'm looking for data from the [1980](date)-[1990](date) period in [Bulgaria](country)
+    - What stats do you have on [cotton](commodity) from [2007](date) to [2022](date)?
+    - What items are tracked for [Mexico](country)?
+    - How can price changes be compared in [Colombia](country), [Venezuela](country), and [Ecuador](country) for [2017](date)?
+    - How can I compare [Sweden](country) and [Finland](country) in terms of food prices?
+    - Which countries are part of your dataset?
+    - What commodities are included in your dataset?
+    - Provide a list of all commodities you have data on for [2015](date)
+    - I'm looking for data from the [1987](date)-[1997](date) period in [Serbia](country)
+    - What about [Armenia](country)
+    - How about [buckwheat](commodity) in [1995](date)
+    - Show
+    - List
+    - Table
 - intent: change_mind
   examples: |
     - I changed my mind
@@ -153,6 +199,9 @@ nlu:
     - I don't want to continue with the [herbal tea](commodity) analysis in [India](country)
     - Let's do something else instead of the price trends for [aromatic rice](commodity) in [Bangladesh](country)
     - Forget about the historical prices in [2018](date)
+    - You suck
+    - This is wrong
+    - This is not what I asked
 - intent: out_of_scope
   examples: |
     - I don't know what you're talking about.
