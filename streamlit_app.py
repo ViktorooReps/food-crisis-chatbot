@@ -1,5 +1,4 @@
-from time import sleep
-from typing import Iterator
+import uuid
 
 import streamlit as st
 import requests
@@ -63,6 +62,9 @@ def update_conversation(user_message, bot_message, image_paths=None, table_data=
     # Append user and bot responses to the conversation history
     st.session_state.conversation.append((user_message, bot_message, image_paths, table_data))
 
+
+if "sender_id" not in st.session_state:
+    st.session_state.sender_id = str(uuid.uuid4())
 
 # Title of your web application
 st.title('Price Watch')
@@ -144,7 +146,7 @@ if prompt := st.chat_input(translate_text(
             rasa_server_url = 'http://localhost:5005/webhooks/rest/webhook'
             # Define the payload
             payload = {
-                "sender": "user",
+                "sender": st.session_state.sender_id,
                 "message": prompt
             }
             # POST request to send the message to the Rasa server
