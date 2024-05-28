@@ -78,7 +78,8 @@ languages = {
     'Chinese': 'zh-cn',
     'Japanese': 'ja',
     'Russian': 'ru',
-    'Hindi': 'hi'
+    'Hindi': 'hi',
+    'Persian': 'fa'
 }
 
 # Initialize selected language in session state if not already set
