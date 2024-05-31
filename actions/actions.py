@@ -237,7 +237,7 @@ class MapEntitiesToSlotsAction(Action):
                     n_periods = int(n_periods)
                 except (ValueError, TypeError):
                     # recent years vs recent year
-                    n_periods = 3 if is_multiple else 1
+                    n_periods = 3 if is_multiple else 1  # FIXME
 
                 delta_days = n_periods * PERIOD2LENGTH[period]
                 start_date = today - timedelta(days=delta_days)

@@ -105,14 +105,10 @@ responses:
   utter_ask_start_date:
     - text: "Please provide the date period for the analysis."
     - text: "Can you give me the date period for the analysis?"
-    - text: "What is the start date for your analysis period?"
-    - text: "Could you specify the start date for the analysis?"
 
   utter_ask_end_date:
     - text: "Please provide the date period for the analysis."
-    - text: "Can you give me the end date for the analysis period?"
     - text: "What is the end date for your analysis period?"
-    - text: "Could you specify the end date for the analysis?"
 
   utter_cancel_analyze:
     - text: "Alright, let's do something else. What would you like to analyze instead?"
