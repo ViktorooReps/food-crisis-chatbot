@@ -1,5 +1,14 @@
 # Food Crisis ChatBot
 
+Built with Streamlit and Rasa.
+
+![Screenshot 2024-05-27 222417](https://github.com/ViktorooReps/food-crisis-chatbot/assets/56936206/740816f2-2f59-427c-9e52-2538d6e52034)
+![Screenshot 2024-05-27 222458](https://github.com/ViktorooReps/food-crisis-chatbot/assets/56936206/9eeef9ae-1def-4968-a83f-21a1b7723b39)
+
+## Features
+* Analyze food prices across multiple countries on a given time period.
+* Display available commodities/countries/periods for comparison for given countries/dates/commodities.
+* Automatic translation to any language with Google Translate integration
 ## Requirements
 
 - Python 3.8
