@@ -1,4 +1,4 @@
-# Food Crisis ChatBot
+# Price Watch | Food Crisis ChatBot
 
 Built with Streamlit and Rasa.
 
